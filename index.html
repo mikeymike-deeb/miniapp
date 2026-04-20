@@ -1,60 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>New York Street</title>
+  <meta charset="UTF-8">
+  <title>New York Street - Daily Report</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
+      font-family: Georgia, serif;
+      background: #ffffff;
       color: #111;
     }
 
     header {
       padding: 20px;
-      border-bottom: 1px solid #eee;
       text-align: center;
+      border-bottom: 1px solid #eaeaea;
     }
 
     header h1 {
       margin: 0;
-      font-size: 26px;
+      font-size: 28px;
       letter-spacing: 1px;
     }
 
-    .sub {
+    header p {
+      margin: 5px 0 0;
       font-size: 12px;
       color: gray;
+      font-family: Arial, sans-serif;
     }
 
-    .article {
-      padding: 20px;
-      max-width: 700px;
+    .container {
+      max-width: 750px;
       margin: auto;
+      padding: 20px;
     }
 
-    .title {
-      font-size: 22px;
-      margin-bottom: 5px;
+    .headline {
+      font-size: 26px;
+      margin-bottom: 10px;
     }
 
     .meta {
       font-size: 12px;
       color: gray;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 6px;
+      margin: 15px 0;
     }
 
     p {
-      line-height: 1.6;
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 15px;
     }
 
-    .card {
-      margin-top: 20px;
-      padding: 15px;
-      border: 1px solid #eee;
-      border-radius: 10px;
+    .quote {
+      border-left: 3px solid #ddd;
+      padding-left: 10px;
+      color: #444;
+      font-style: italic;
+      margin: 20px 0;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: gray;
+      padding: 30px 10px;
+      border-top: 1px solid #eee;
+      margin-top: 40px;
+      font-family: Arial, sans-serif;
     }
   </style>
 </head>
@@ -63,25 +86,46 @@
 
 <header>
   <h1>New York Street</h1>
-  <div class="sub">Independent digital news platform</div>
+  <p>Independent Digital News & Analysis</p>
 </header>
 
-<div class="article">
-  <div class="title">Markets React to Global Changes</div>
-  <div class="meta">Today • Editorial Team</div>
+<div class="container">
 
-  <p>
-    Financial markets showed mixed reactions today as global economic signals continue to shift.
-  </p>
-
-  <p>
-    Analysts suggest that volatility may continue as investors react to upcoming policy updates.
-  </p>
-
-  <div class="card">
-    📊 More stories coming soon...
+  <div class="headline">
+    Global Markets Show Mixed Movement Amid Economic Uncertainty
   </div>
+
+  <div class="meta">
+    By Editorial Desk • April 2026 • Financial Desk
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e" />
+
+  <p>
+    Global financial markets experienced mixed trading sessions this week as investors reacted to ongoing economic uncertainty and shifting policy expectations across major economies.
+  </p>
+
+  <p>
+    Analysts note that volatility remains elevated as markets continue to adjust to inflation signals, interest rate projections, and global trade developments.
+  </p>
+
+  <div class="quote">
+    “We are seeing a period of recalibration across multiple sectors,” said an independent market analyst. “Investors are cautiously repositioning portfolios.”
+  </div>
+
+  <p>
+    Technology and energy sectors showed the most movement, while defensive assets continued to attract steady interest from institutional investors.
+  </p>
+
+  <p>
+    Economists suggest that upcoming data releases will play a critical role in shaping short-term market direction.
+  </p>
+
 </div>
+
+<footer>
+  © 2026 New York Street • Independent Digital Publication
+</footer>
 
 <script>
   const tg = window.Telegram.WebApp;
