@@ -1,172 +1,58 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>New York Street</title>
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+function openArticle(id) {
+  document.getElementById("home").style.display = "none";
+  document.getElementById("article").style.display = "block";
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #111;
-    }
+  let title = "";
+  let content = "";
 
-    header {
-      padding: 18px;
-      text-align: center;
-      border-bottom: 1px solid #eee;
-    }
+  if (id === 1) {
+    title = "Global Markets Show Mixed Performance Amid Economic Uncertainty";
 
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-      letter-spacing: 1px;
-    }
+    content = `
+Global financial markets experienced mixed performance across major regions as investors reacted to ongoing macroeconomic uncertainty, inflation expectations, and central bank policy outlooks.
 
-    header p {
-      margin: 5px 0 0;
-      font-size: 12px;
-      color: gray;
-    }
+Trading volumes remained elevated throughout the week, with participants adjusting positions ahead of upcoming economic data releases. Analysts note that volatility continues to be driven primarily by uncertainty rather than a single macro event.
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 15px;
-    }
+Technology stocks faced moderate pressure as higher interest rate expectations influenced valuation models, particularly in growth-oriented sectors. Meanwhile, energy markets showed relative stability due to balanced supply and demand conditions.
 
-    .card {
-      border: 1px solid #eee;
-      border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 15px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
+Institutional investors have reportedly increased allocation toward defensive sectors such as healthcare and consumer staples, reflecting a cautious approach to short-term market conditions.
 
-    .card:hover {
-      background: #f9f9f9;
-    }
-
-    .title {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-
-    .desc {
-      font-size: 14px;
-      color: #444;
-      line-height: 1.4;
-    }
-
-    .meta {
-      font-size: 11px;
-      color: gray;
-      margin-top: 8px;
-    }
-
-    .article-view {
-      display: none;
-      padding: 15px;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    .back {
-      margin-bottom: 15px;
-      display: inline-block;
-      color: blue;
-      cursor: pointer;
-    }
-
-    h2 {
-      font-size: 22px;
-    }
-
-    p {
-      line-height: 1.7;
-    }
-  </style>
-</head>
-
-<body>
-
-<header>
-  <h1>New York Street</h1>
-  <p>Independent Digital News</p>
-</header>
-
-<!-- HOME -->
-<div class="container" id="home">
-
-  <div class="card" onclick="openArticle(1)">
-    <div class="title">Global Markets Show Mixed Performance</div>
-    <div class="desc">Markets reacted cautiously as investors monitored economic signals and policy expectations...</div>
-    <div class="meta">Finance • Today</div>
-  </div>
-
-  <div class="card" onclick="openArticle(2)">
-    <div class="title">Technology Sector Faces Pressure</div>
-    <div class="desc">Tech stocks declined slightly as interest rate expectations continued to influence valuations...</div>
-    <div class="meta">Technology • Today</div>
-  </div>
-
-  <div class="card" onclick="openArticle(3)">
-    <div class="title">Energy Markets Remain Stable</div>
-    <div class="desc">Oil and energy markets maintained stability amid balanced global supply conditions...</div>
-    <div class="meta">Energy • Today</div>
-  </div>
-
-</div>
-
-<!-- ARTICLE VIEW -->
-<div class="article-view" id="article">
-
-  <div class="back" onclick="goBack()">← Back</div>
-
-  <h2 id="articleTitle"></h2>
-  <p id="articleContent"></p>
-
-</div>
-
-<script>
-  const tg = window.Telegram.WebApp;
-  tg.expand();
-
-  function openArticle(id) {
-    document.getElementById("home").style.display = "none";
-    document.getElementById("article").style.display = "block";
-
-    let title = "";
-    let content = "";
-
-    if (id === 1) {
-      title = "Global Markets Show Mixed Performance";
-      content = "Global financial markets showed mixed performance as investors reacted to economic indicators and policy expectations. Trading activity remained cautious across major regions as analysts continued to assess inflation trends and interest rate forecasts.";
-    }
-
-    if (id === 2) {
-      title = "Technology Sector Faces Pressure";
-      content = "Technology stocks experienced moderate pressure during recent trading sessions as rising interest rate expectations influenced valuation models. Investors remain focused on earnings reports and forward guidance from major firms.";
-    }
-
-    if (id === 3) {
-      title = "Energy Markets Remain Stable";
-      content = "Energy markets remained relatively stable, supported by balanced supply conditions and steady demand trends across key regions. Analysts note that short-term fluctuations remain possible depending on geopolitical developments.";
-    }
-
-    document.getElementById("articleTitle").innerText = title;
-    document.getElementById("articleContent").innerText = content;
+Market strategists suggest that the next phase of movement will depend heavily on inflation data and monetary policy signals from major central banks.
+    `;
   }
 
-  function goBack() {
-    document.getElementById("home").style.display = "block";
-    document.getElementById("article").style.display = "none";
-  }
-</script>
+  if (id === 2) {
+    title = "Technology Sector Faces Pressure as Interest Rate Expectations Shift";
 
-</body>
-</html>
+    content = `
+The global technology sector experienced downward pressure during recent trading sessions as investors reassessed growth expectations under changing interest rate conditions.
+
+Higher borrowing costs have impacted valuation models across the tech industry, particularly affecting companies with high future earnings dependency. As a result, volatility has increased in both public equities and private valuations.
+
+Despite short-term weakness, long-term sentiment toward artificial intelligence, cloud infrastructure, and semiconductor development remains positive among analysts.
+
+Several major firms have recently adjusted forward guidance, citing cautious consumer demand and tighter financial conditions.
+
+Experts suggest that the sector may remain sensitive until clearer signals emerge regarding monetary policy direction and inflation stabilization.
+    `;
+  }
+
+  if (id === 3) {
+    title = "Energy Markets Maintain Stability Amid Balanced Global Supply Conditions";
+
+    content = `
+Energy markets remained relatively stable this week, supported by balanced global supply conditions and consistent demand patterns across major economies.
+
+Oil prices showed limited volatility as production levels from key exporting regions aligned closely with global consumption trends. Analysts indicate that current market stability is being driven by predictable supply chains and moderated demand growth.
+
+Renewable energy sectors continue to expand, with increased investment in solar and wind infrastructure across multiple regions. This transition is gradually influencing long-term energy pricing structures.
+
+Geopolitical developments remain a key factor in energy market outlooks, although recent conditions have not significantly disrupted supply flows.
+
+Market observers expect stability to continue in the short term unless major geopolitical or production-related disruptions occur.
+    `;
+  }
+
+  document.getElementById("articleTitle").innerText = title;
+  document.getElementById("articleContent").innerText = content;
+}
