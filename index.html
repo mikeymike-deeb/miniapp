@@ -9,47 +9,57 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #ffffff;
+      background: #f4f4f4;
       color: #111;
     }
 
     header {
-      padding: 18px;
+      background: #ffffff;
+      padding: 16px;
       text-align: center;
-      border-bottom: 1px solid #eee;
+      border-bottom: 1px solid #eaeaea;
+      position: sticky;
+      top: 0;
     }
 
     header h1 {
       margin: 0;
-      font-size: 24px;
+      font-size: 22px;
     }
 
     header p {
-      margin: 5px 0 0;
+      margin: 4px 0 0;
       font-size: 12px;
       color: gray;
     }
 
-    .container {
+    .feed {
       max-width: 800px;
       margin: auto;
-      padding: 15px;
+      padding: 10px;
     }
 
     .card {
-      border: 1px solid #eee;
-      border-radius: 10px;
-      padding: 15px;
+      background: #fff;
+      border-radius: 12px;
       margin-bottom: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       cursor: pointer;
     }
 
-    .card:hover {
-      background: #f9f9f9;
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .content {
+      padding: 12px;
     }
 
     .title {
-      font-size: 18px;
+      font-size: 17px;
       font-weight: bold;
       margin-bottom: 6px;
     }
@@ -57,6 +67,7 @@
     .desc {
       font-size: 14px;
       color: #444;
+      line-height: 1.4;
     }
 
     .meta {
@@ -65,11 +76,13 @@
       margin-top: 8px;
     }
 
+    /* ARTICLE VIEW */
     #articleView {
       display: none;
-      padding: 15px;
       max-width: 800px;
       margin: auto;
+      padding: 15px;
+      background: #fff;
     }
 
     .back {
@@ -81,13 +94,11 @@
 
     h2 {
       font-size: 22px;
-      margin-bottom: 10px;
     }
 
     p {
       line-height: 1.8;
       font-size: 16px;
-      margin-bottom: 15px;
     }
   </style>
 </head>
@@ -96,40 +107,46 @@
 
 <header>
   <h1>New York Street</h1>
-  <p>Independent Digital News</p>
+  <p>Live News Feed</p>
 </header>
 
-<!-- HOME -->
-<div class="container" id="home">
+<!-- FEED -->
+<div class="feed" id="feed">
 
   <div class="card" onclick="openArticle(1)">
-    <div class="title">Global Markets Show Mixed Performance</div>
-    <div class="desc">Markets react to ongoing economic uncertainty and shifting global policy expectations.</div>
-    <div class="meta">Finance • Today</div>
+    <img src="https://images.unsplash.com/photo-1508385082359-f38ae991e8f2">
+    <div class="content">
+      <div class="title">Global Markets Show Mixed Performance</div>
+      <div class="desc">Investors react to uncertainty across global financial markets as volatility continues.</div>
+      <div class="meta">Finance • Today</div>
+    </div>
   </div>
 
   <div class="card" onclick="openArticle(2)">
-    <div class="title">Technology Sector Faces Pressure</div>
-    <div class="desc">Tech companies adjust strategies as interest rate expectations continue to shift.</div>
-    <div class="meta">Technology • Today</div>
+    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b">
+    <div class="content">
+      <div class="title">Technology Stocks Under Pressure</div>
+      <div class="desc">Tech sector reacts to interest rate expectations and shifting investor sentiment.</div>
+      <div class="meta">Technology • Today</div>
+    </div>
   </div>
 
   <div class="card" onclick="openArticle(3)">
-    <div class="title">Energy Markets Remain Stable</div>
-    <div class="desc">Energy prices remain steady despite global supply chain uncertainty.</div>
-    <div class="meta">Energy • Today</div>
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab">
+    <div class="content">
+      <div class="title">Energy Markets Remain Stable</div>
+      <div class="desc">Oil and energy prices remain steady amid balanced global supply conditions.</div>
+      <div class="meta">Energy • Today</div>
+    </div>
   </div>
 
 </div>
 
 <!-- ARTICLE -->
 <div id="articleView">
-
   <div class="back" onclick="goBack()">← Back</div>
-
   <h2 id="title"></h2>
   <p id="content"></p>
-
 </div>
 
 <script>
@@ -137,55 +154,43 @@
   tg.expand();
 
   function openArticle(id) {
-    document.getElementById("home").style.display = "none";
+    document.getElementById("feed").style.display = "none";
     document.getElementById("articleView").style.display = "block";
 
     let title = "";
     let content = "";
 
     if (id === 1) {
-      title = "Global Markets Show Mixed Performance Amid Ongoing Economic Uncertainty";
+      title = "Global Markets Show Mixed Performance";
 
       content =
-        "Global financial markets experienced mixed performance during recent trading sessions as investors continued to assess a wide range of economic signals, including inflation trends, central bank commentary, and global growth forecasts. " +
-
-        "Market participants remain cautious as volatility persists across equities, bonds, and commodities. Trading volumes have increased as investors reposition portfolios in response to shifting macroeconomic conditions. " +
-
-        "Technology stocks have shown particular sensitivity to interest rate expectations, as higher borrowing costs influence future earnings valuations. At the same time, energy markets have remained relatively stable due to balanced supply and demand conditions across major regions. " +
-
-        "Institutional investors are increasingly shifting toward defensive sectors such as healthcare, utilities, and consumer staples, reflecting a more cautious short-term outlook. " +
-
-        "Economists suggest that upcoming inflation data and central bank policy decisions will play a critical role in determining the next phase of market direction. For now, uncertainty remains the dominant factor shaping investor behavior.";
+        "Global financial markets showed mixed performance as investors reacted to economic data, inflation trends, and central bank expectations. " +
+        "Trading activity remained elevated as uncertainty continues to influence investor behavior. " +
+        "Technology stocks faced pressure, while energy markets stayed stable. " +
+        "Analysts say volatility is being driven more by uncertainty than by specific events. " +
+        "Future direction depends on upcoming macroeconomic reports.";
     }
 
     if (id === 2) {
-      title = "Technology Sector Faces Pressure as Interest Rate Expectations Shift";
+      title = "Technology Stocks Under Pressure";
 
       content =
-        "The global technology sector has come under pressure in recent trading periods as investors adjust expectations surrounding interest rate policy and broader macroeconomic conditions. " +
-
-        "Higher borrowing costs have directly impacted valuation models, particularly for high-growth companies that rely heavily on future earnings projections. This has resulted in increased volatility across both established tech giants and emerging startups. " +
-
-        "Despite short-term market weakness, long-term sentiment toward artificial intelligence, cloud computing, and semiconductor industries remains relatively strong among analysts and institutional investors. " +
-
-        "Several companies have recently revised their forward guidance, citing cautious consumer demand and tighter financial conditions across global markets. " +
-
-        "Experts note that the sector’s performance will likely remain sensitive until clearer signals emerge regarding inflation stability and monetary policy direction. Investors continue to monitor earnings reports closely for further insight.";
+        "Technology stocks experienced downward pressure as interest rate expectations influenced valuation models. " +
+        "Higher borrowing costs have reduced risk appetite in growth sectors. " +
+        "Despite short-term weakness, long-term outlook remains focused on AI and cloud computing. " +
+        "Investors are closely watching earnings reports and policy signals. " +
+        "Market sentiment remains cautious but stable.";
     }
 
     if (id === 3) {
-      title = "Energy Markets Remain Stable Amid Balanced Global Supply Conditions";
+      title = "Energy Markets Remain Stable";
 
       content =
-        "Energy markets have maintained relative stability in recent trading sessions, supported by balanced global supply levels and consistent demand across major economies. " +
-
-        "Oil prices have shown limited volatility as production output from key exporting regions remains aligned with global consumption patterns. This equilibrium has contributed to a more stable pricing environment compared to previous periods. " +
-
-        "At the same time, investment in renewable energy infrastructure continues to grow, with increased activity in solar, wind, and battery storage projects across multiple regions. This gradual transition is influencing long-term energy market expectations. " +
-
-        "Geopolitical developments remain a potential risk factor; however, recent conditions have not significantly disrupted global supply chains or production flows. " +
-
-        "Analysts suggest that the short-term outlook for energy markets remains stable, though future fluctuations may occur depending on geopolitical events or unexpected supply disruptions.";
+        "Energy markets remained stable due to balanced global supply and steady demand. " +
+        "Oil prices showed limited volatility as production aligned with consumption. " +
+        "Renewable energy investment continues to grow globally. " +
+        "Geopolitical risks remain present but controlled. " +
+        "Short-term outlook remains stable unless disruptions occur.";
     }
 
     document.getElementById("title").innerText = title;
@@ -193,7 +198,7 @@
   }
 
   function goBack() {
-    document.getElementById("home").style.display = "block";
+    document.getElementById("feed").style.display = "block";
     document.getElementById("articleView").style.display = "none";
   }
 </script>
