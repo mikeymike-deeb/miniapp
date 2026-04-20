@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NewYork Street</title>
+
+  <!-- Telegram SDK -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>NewYork Street</h1>
+<p>This is my first Telegram Mini App 🚀</p>
+
+<button onclick="hello()">Click me</button>
+
+<script>
+  const tg = window.Telegram.WebApp;
+
+  // Make it fullscreen
+  tg.expand();
+
+  function hello() {
+    alert("Mini App is working!");
+  }
+</script>
+
+</body>
+</html>
