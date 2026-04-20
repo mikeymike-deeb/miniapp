@@ -1,35 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>NewYork Street</title>
-
-  <!-- Telegram SDK -->
+  <title>New York Street</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
 
   <style>
     body {
-      font-family: Arial;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #111;
+    }
+
+    header {
       padding: 20px;
+      border-bottom: 1px solid #eee;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: 1px;
+    }
+
+    .sub {
+      font-size: 12px;
+      color: gray;
+    }
+
+    .article {
+      padding: 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .title {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .meta {
+      font-size: 12px;
+      color: gray;
+      margin-bottom: 15px;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .card {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #eee;
+      border-radius: 10px;
     }
   </style>
 </head>
 
 <body>
 
-<h1>NewYork Street</h1>
-<p>This is my first Telegram Mini App 🚀</p>
+<header>
+  <h1>New York Street</h1>
+  <div class="sub">Independent digital news platform</div>
+</header>
 
-<button onclick="hello()">Click me</button>
+<div class="article">
+  <div class="title">Markets React to Global Changes</div>
+  <div class="meta">Today • Editorial Team</div>
+
+  <p>
+    Financial markets showed mixed reactions today as global economic signals continue to shift.
+  </p>
+
+  <p>
+    Analysts suggest that volatility may continue as investors react to upcoming policy updates.
+  </p>
+
+  <div class="card">
+    📊 More stories coming soon...
+  </div>
+</div>
 
 <script>
   const tg = window.Telegram.WebApp;
-
-  // Make it fullscreen
   tg.expand();
-
-  function hello() {
-    alert("Mini App is working!");
-  }
 </script>
 
 </body>
