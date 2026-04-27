@@ -11,50 +11,73 @@
     }
 
     header {
-      padding: 20px;
       border-bottom: 1px solid #eee;
-      text-align: center;
+      padding: 15px 20px;
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 24px;
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
     }
 
-    header p {
-      margin: 5px 0 0;
-      color: #666;
+    .logo {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .menu a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: #555;
       font-size: 14px;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 1100px;
       margin: auto;
       padding: 20px;
     }
 
-    article {
-      margin-bottom: 25px;
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
     }
 
-    article h2 {
-      font-size: 18px;
-      margin-bottom: 5px;
+    .card {
+      border: 1px solid #eee;
+      padding: 15px;
+      border-radius: 10px;
+      background: #fff;
     }
 
-    article p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #333;
+    .card h2 {
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+
+    .card p {
+      font-size: 13px;
+      color: #444;
+      line-height: 1.5;
     }
 
     footer {
       text-align: center;
       font-size: 12px;
       color: #888;
-      padding: 20px;
+      padding: 30px;
       border-top: 1px solid #eee;
       margin-top: 40px;
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -62,40 +85,67 @@
 <body>
 
 <header>
-  <h1>Daily Insight Journal</h1>
-  <p>Independent articles and general public discussions</p>
+  <div class="nav">
+    <div class="logo">Daily Insight Journal</div>
+    <div class="menu">
+      <a href="#">Home</a>
+      <a href="#">World</a>
+      <a href="#">Economy</a>
+      <a href="#">Opinion</a>
+    </div>
+  </div>
 </header>
 
 <div class="container">
 
-  <article>
-    <h2>Shifts in global economic discussions</h2>
-    <p>
-      Conversations around financial systems, inflation, and long-term economic stability
-      continue to appear across online communities and media platforms.
-    </p>
-  </article>
+  <div class="grid">
 
-  <article>
-    <h2>Rise of independent information platforms</h2>
-    <p>
-      More people are turning to alternative sources of information to compare perspectives
-      and understand global developments from different viewpoints.
-    </p>
-  </article>
+    <div class="card"><h2>Global economic discussions grow</h2><p>Online conversations about inflation and financial stability continue to increase globally.</p></div>
 
-  <article>
-    <h2>Public reaction to modern digital systems</h2>
-    <p>
-      Digital banking, online platforms, and new technologies are reshaping how users
-      interact with financial and information systems worldwide.
-    </p>
-  </article>
+    <div class="card"><h2>Digital banking expansion</h2><p>More users are shifting toward digital-first banking systems and services.</p></div>
+
+    <div class="card"><h2>Independent media growth</h2><p>Alternative platforms are gaining attention across various communities.</p></div>
+
+    <div class="card"><h2>Technology in finance</h2><p>New technologies are influencing how financial systems operate worldwide.</p></div>
+
+    <div class="card"><h2>Public opinion shifts online</h2><p>Social platforms are increasingly shaping global narratives.</p></div>
+
+    <div class="card"><h2>Information access changes</h2><p>People now consume news faster and from more diverse sources.</p></div>
+
+    <div class="card"><h2>Market uncertainty discussions</h2><p>Economists and users discuss long-term financial stability trends.</p></div>
+
+    <div class="card"><h2>Rise of digital currencies</h2><p>Interest in digital payment systems continues to expand.</p></div>
+
+    <div class="card"><h2>Global policy developments</h2><p>Policy changes in multiple regions influence economic conversations.</p></div>
+
+    <div class="card"><h2>Social media influence on news</h2><p>News spreads faster through online communities than traditional media.</p></div>
+
+    <div class="card"><h2>Changing financial behavior</h2><p>People are adapting to new digital financial tools and platforms.</p></div>
+
+    <div class="card"><h2>Economic uncertainty topics</h2><p>Discussions about stability and risk continue across platforms.</p></div>
+
+    <div class="card"><h2>Global technology trends</h2><p>Technology adoption is accelerating in multiple industries.</p></div>
+
+    <div class="card"><h2>Media consumption evolution</h2><p>Users are shifting toward shorter and faster information formats.</p></div>
+
+    <div class="card"><h2>Financial system modernization</h2><p>Traditional systems are slowly integrating digital infrastructure.</p></div>
+
+    <div class="card"><h2>Public trust in institutions</h2><p>Trust and transparency remain widely discussed topics.</p></div>
+
+    <div class="card"><h2>Online discussion ecosystems</h2><p>Communities play a major role in shaping narratives today.</p></div>
+
+    <div class="card"><h2>Global communication changes</h2><p>Digital platforms continue to redefine communication methods.</p></div>
+
+    <div class="card"><h2>Economic awareness growth</h2><p>More people are following global financial news closely.</p></div>
+
+    <div class="card"><h2>Future of digital systems</h2><p>Ongoing innovation continues to reshape global systems.</p></div>
+
+  </div>
 
 </div>
 
 <footer>
-  © 2026 Daily Insight Journal — All content is for general informational purposes only.
+  © 2026 Daily Insight Journal — Independent informational publication
 </footer>
 
 </body>
