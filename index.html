@@ -1,152 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Northline News</title>
+  <title>Atlas News Network</title>
 
   <style>
     body {
       margin: 0;
-      font-family: "Arial", sans-serif;
+      font-family: Arial, sans-serif;
       background: #f4f6f8;
       color: #111;
     }
 
     /* TOP BAR */
     .topbar {
-      background: #0b0f19;
+      background: #b30000;
       color: white;
       padding: 14px 20px;
       font-weight: bold;
       font-size: 18px;
-      letter-spacing: 0.5px;
+      letter-spacing: 1px;
     }
 
-    /* NAV */
+    /* BREAKING */
+    .breaking {
+      background: #ffcc00;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
     .nav {
-      background: white;
-      border-bottom: 1px solid #e6e6e6;
+      background: #111827;
       padding: 10px 20px;
       display: flex;
-      gap: 15px;
+      gap: 18px;
       font-size: 14px;
     }
 
     .nav a {
+      color: #ddd;
       text-decoration: none;
-      color: #333;
     }
 
     .nav a:hover {
-      color: #000;
-      font-weight: bold;
+      color: white;
     }
 
-    /* HERO */
-    .hero {
-      max-width: 1100px;
-      margin: 20px auto;
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-    }
-
-    .hero h1 {
-      margin: 0;
-      font-size: 26px;
-    }
-
-    .hero p {
-      color: #666;
-      margin-top: 8px;
-      font-size: 14px;
-    }
-
-    /* GRID */
     .container {
-      max-width: 1100px;
+      max-width: 1000px;
       margin: auto;
       padding: 20px;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 15px;
-    }
-
-    /* FEATURED */
-    .featured {
-      background: white;
-      padding: 18px;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-      cursor: pointer;
-    }
-
-    .featured h2 {
-      margin-top: 0;
-      font-size: 20px;
-    }
-
-    .featured p {
-      color: #555;
-      font-size: 14px;
-    }
-
-    /* SIDEBAR */
-    .side {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .side-card {
-      background: white;
-      padding: 12px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      cursor: pointer;
-    }
-
-    .side-card h3 {
-      font-size: 14px;
-      margin: 0;
-    }
-
-    .side-card p {
-      font-size: 12px;
-      color: #666;
-      margin-top: 5px;
-    }
-
-    /* ARTICLE VIEW */
+    /* ARTICLE */
     .article {
-      display: none;
-      max-width: 800px;
-      margin: 20px auto;
       background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+      margin-bottom: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
     }
 
-    .back {
-      color: #0066cc;
-      cursor: pointer;
-      margin-bottom: 15px;
-      display: inline-block;
-      font-size: 14px;
+    .article img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      height: 220px;
+      object-fit: cover;
     }
 
     .article h2 {
       margin-top: 0;
+      font-size: 20px;
     }
 
     .meta {
       font-size: 12px;
       color: #888;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+    }
+
+    .article p {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .lead {
+      font-weight: bold;
     }
 
     footer {
@@ -155,118 +97,110 @@
       font-size: 12px;
       color: #777;
     }
-
-    @media (max-width: 900px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
   </style>
 </head>
 
 <body>
 
 <div class="topbar">
-  Northline News
+  ATLAS NEWS NETWORK
+</div>
+
+<div class="breaking">
+  🔴 BREAKING: Global discussions around economic stability and digital systems continue to rise worldwide
 </div>
 
 <div class="nav">
-  <a href="#">Home</a>
   <a href="#">World</a>
   <a href="#">Economy</a>
   <a href="#">Technology</a>
+  <a href="#">Markets</a>
   <a href="#">Opinion</a>
 </div>
 
-<div class="hero">
-  <h1>Independent reporting on global trends & public discussions</h1>
-  <p>Covering economic shifts, digital systems, and worldwide information trends.</p>
-</div>
+<div class="container">
 
-<!-- HOME -->
-<div id="home" class="container">
+  <div class="article">
+    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=60">
 
-  <div class="grid">
+    <h2>Global economic discussions intensify</h2>
+    <div class="meta">Editorial Desk • Global Affairs</div>
 
-    <!-- FEATURED -->
-    <div class="featured" onclick="openArticle(0)">
-      <h2>Global economic discussions intensify</h2>
-      <p>Public conversations around inflation, debt, and long-term stability continue across online platforms and media.</p>
-    </div>
+    <p class="lead">
+      Public conversations around inflation, debt levels, and long-term financial stability continue to grow globally.
+    </p>
 
-    <!-- SIDEBAR -->
-    <div class="side">
+    <p>
+      Online platforms and digital communities have significantly increased the visibility of economic discussions, making them part of everyday public discourse.
+    </p>
 
-      <div class="side-card" onclick="openArticle(1)">
-        <h3>Digital banking expansion</h3>
-        <p>More services shift online globally.</p>
-      </div>
-
-      <div class="side-card" onclick="openArticle(2)">
-        <h3>Media consumption shifts</h3>
-        <p>Short-form content dominates news flow.</p>
-      </div>
-
-      <div class="side-card" onclick="openArticle(3)">
-        <h3>Technology in finance</h3>
-        <p>New systems reshape financial tools.</p>
-      </div>
-
-      <div class="side-card" onclick="openArticle(4)">
-        <h3>Public opinion trends</h3>
-        <p>Online communities influence narratives.</p>
-      </div>
-
-    </div>
-
+    <p>
+      Analysts note that while perspectives vary widely, interest in global financial conditions is higher than in previous years.
+    </p>
   </div>
-</div>
 
-<!-- ARTICLE -->
-<div id="article" class="article">
-  <div class="back" onclick="goBack()">← Back to Home</div>
-  <h2 id="title"></h2>
-  <div class="meta">Published • Editorial Desk</div>
-  <p id="content"></p>
+  <div class="article">
+    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=60">
+
+    <h2>Digital banking continues to expand</h2>
+    <div class="meta">Financial Desk • Technology</div>
+
+    <p class="lead">
+      Financial institutions are increasingly shifting toward digital-first systems.
+    </p>
+
+    <p>
+      Mobile banking, online payments, and automated financial tools are now widely adopted, reducing the need for physical branch visits in many regions.
+    </p>
+
+    <p>
+      Experts suggest this transition will continue as users demand faster and more accessible services.
+    </p>
+  </div>
+
+  <div class="article">
+    <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=60">
+
+    <h2>Media consumption is rapidly evolving</h2>
+    <div class="meta">Media Desk • Digital Trends</div>
+
+    <p class="lead">
+      Short-form content and real-time updates are now the dominant way people consume news.
+    </p>
+
+    <p>
+      Social platforms and algorithm-based feeds have changed how audiences interact with information, prioritizing speed and accessibility.
+    </p>
+
+    <p>
+      Traditional reporting still exists but competes with faster digital formats.
+    </p>
+  </div>
+
+  <div class="article">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=60">
+
+    <h2>Technology continues to reshape industries</h2>
+    <div class="meta">Technology Desk • Innovation</div>
+
+    <p class="lead">
+      Automation and digital systems are transforming industries worldwide.
+    </p>
+
+    <p>
+      From finance to communication, technological tools are reducing manual processes and increasing efficiency across sectors.
+    </p>
+
+    <p>
+      This trend is expected to continue as digital infrastructure expands globally.
+    </p>
+  </div>
+
 </div>
 
 <footer>
-  © 2026 Northline News — Independent informational publication
+  © 2026 Atlas News Network — Independent informational publication
 </footer>
-
-<script>
-
-const articles = [
-  ["Global economic discussions intensify",
-   "Public conversations around inflation, debt levels, and long-term financial stability continue to grow across digital platforms and media outlets."],
-
-  ["Digital banking expansion",
-   "Financial services are increasingly moving toward digital-first platforms, improving accessibility and global reach."],
-
-  ["Media consumption shifts",
-   "Audiences are moving toward shorter, faster, and more visual forms of news consumption across platforms."],
-
-  ["Technology in finance",
-   "Advancements in technology continue to reshape financial systems and payment infrastructure worldwide."],
-
-  ["Public opinion trends",
-   "Online communities are playing a growing role in shaping how information and narratives spread globally."]
-];
-
-function openArticle(i) {
-  document.getElementById("home").style.display = "none";
-  document.getElementById("article").style.display = "block";
-
-  document.getElementById("title").innerText = articles[i][0];
-  document.getElementById("content").innerText = articles[i][1];
-}
-
-function goBack() {
-  document.getElementById("home").style.display = "block";
-  document.getElementById("article").style.display = "none";
-}
-
-</script>
 
 </body>
 </html>
