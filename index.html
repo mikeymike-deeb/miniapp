@@ -1,50 +1,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Atlas News Network</title>
+  <title>Atlas Global Media</title>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f3f5f7;
+      background: #f2f4f7;
       color: #111;
     }
 
-    /* TOP BAR */
+    /* TOP BRAND BAR */
     .topbar {
-      background: #b30000;
+      background: #0b0f19;
       color: white;
       padding: 14px 20px;
       font-size: 20px;
       font-weight: bold;
       letter-spacing: 1px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .topbar span {
+      font-size: 12px;
+      font-weight: normal;
+      color: #aaa;
     }
 
     /* BREAKING TICKER */
-    .breaking {
-      background: #ffcc00;
+    .ticker {
+      background: #d60000;
+      color: white;
       padding: 10px 20px;
+      font-size: 13px;
       font-weight: bold;
-      font-size: 14px;
     }
 
     /* NAV */
     .nav {
-      background: #111827;
-      padding: 10px 20px;
+      background: white;
+      padding: 12px 20px;
       display: flex;
       gap: 18px;
       font-size: 14px;
+      border-bottom: 1px solid #e6e6e6;
     }
 
     .nav a {
-      color: #ddd;
+      color: #333;
       text-decoration: none;
     }
 
     .nav a:hover {
-      color: white;
+      color: #000;
+      font-weight: bold;
     }
 
     /* CONTAINER */
@@ -54,44 +66,44 @@
       padding: 20px;
     }
 
-    /* GRID LAYOUT */
-    .grid {
+    /* HERO GRID */
+    .hero {
       display: grid;
       grid-template-columns: 2fr 1fr;
       gap: 20px;
     }
 
-    /* FEATURED */
-    .featured {
+    /* MAIN FEATURE */
+    .feature {
       background: white;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
     }
 
-    .featured img {
+    .feature img {
       width: 100%;
-      height: 320px;
+      height: 360px;
       object-fit: cover;
     }
 
-    .featured-content {
+    .feature-content {
       padding: 20px;
     }
 
-    .featured h2 {
+    .feature h1 {
       margin: 0;
-      font-size: 24px;
+      font-size: 26px;
     }
 
-    .featured p {
+    .feature p {
       color: #555;
       font-size: 14px;
       line-height: 1.6;
     }
 
     /* SIDEBAR */
-    .side {
+    .sidebar {
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -99,8 +111,8 @@
 
     .side-card {
       background: white;
-      padding: 12px;
       border-radius: 10px;
+      overflow: hidden;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
@@ -108,12 +120,15 @@
       width: 100%;
       height: 120px;
       object-fit: cover;
-      border-radius: 8px;
+    }
+
+    .side-card div {
+      padding: 10px;
     }
 
     .side-card h3 {
+      margin: 0;
       font-size: 14px;
-      margin: 8px 0 4px;
     }
 
     .side-card p {
@@ -121,8 +136,8 @@
       color: #666;
     }
 
-    /* LOWER GRID */
-    .lower {
+    /* GRID SECTION */
+    .grid {
       margin-top: 25px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -154,25 +169,25 @@
     .card p {
       font-size: 12px;
       color: #666;
-      margin-top: 5px;
+      margin-top: 6px;
       line-height: 1.4;
     }
 
     /* FOOTER */
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 35px;
       font-size: 12px;
       color: #777;
       margin-top: 40px;
     }
 
     @media (max-width: 900px) {
-      .grid {
+      .hero {
         grid-template-columns: 1fr;
       }
 
-      .lower {
+      .grid {
         grid-template-columns: 1fr;
       }
     }
@@ -181,71 +196,81 @@
 
 <body>
 
-<div class="topbar">ATLAS NEWS NETWORK</div>
+<div class="topbar">
+  Atlas Global Media
+  <span>Independent Digital News Network</span>
+</div>
 
-<div class="breaking">
-  🔴 BREAKING: Global discussions around economic systems, technology, and digital transformation continue to intensify worldwide
+<div class="ticker">
+  🔴 BREAKING: Global economic, technology, and digital transformation discussions continue across major online platforms
 </div>
 
 <div class="nav">
+  <a href="#">Home</a>
   <a href="#">World</a>
-  <a href="#">Economy</a>
+  <a href="#">Business</a>
   <a href="#">Technology</a>
-  <a href="#">Markets</a>
   <a href="#">Opinion</a>
 </div>
 
 <div class="container">
 
-  <!-- MAIN GRID -->
-  <div class="grid">
+  <!-- HERO -->
+  <div class="hero">
 
-    <!-- FEATURED STORY -->
-    <div class="featured">
-      <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=1200&q=60">
+    <!-- MAIN STORY -->
+    <div class="feature">
+      <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=1400&q=60">
 
-      <div class="featured-content">
-        <h2>Global economic discussions intensify across digital platforms</h2>
+      <div class="feature-content">
+        <h1>Global economic discussions reach new levels across digital platforms</h1>
         <p>
-          Public attention toward inflation, financial systems, and long-term economic stability continues to increase.
-          Analysts say online platforms are now a major driver of how global economic narratives are formed and shared.
+          Public attention toward inflation, financial systems, and long-term stability continues to grow globally.
+          Analysts note that online platforms now play a major role in shaping how economic narratives spread and evolve.
+          The increased accessibility of information has led to wider public engagement with complex financial topics.
         </p>
       </div>
     </div>
 
     <!-- SIDEBAR -->
-    <div class="side">
+    <div class="sidebar">
 
       <div class="side-card">
-        <img src="https://images.unsplash.com/photo-1554224154-26032fced8bd?auto=format&fit=crop&w=800&q=60">
-        <h3>Digital banking expansion</h3>
-        <p>Financial systems continue shifting toward mobile-first services.</p>
+        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=60">
+        <div>
+          <h3>Digital banking expansion</h3>
+          <p>Mobile-first financial systems continue global adoption.</p>
+        </div>
       </div>
 
       <div class="side-card">
         <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=60">
-        <h3>Media consumption changes</h3>
-        <p>Short-form content dominates global attention.</p>
+        <div>
+          <h3>Media consumption shift</h3>
+          <p>Short-form content dominates global news flow.</p>
+        </div>
       </div>
 
       <div class="side-card">
-        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=800&q=60">
-        <h3>Technology acceleration</h3>
-        <p>Industries are rapidly integrating AI and automation.</p>
+        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=60">
+        <div>
+          <h3>Technology acceleration</h3>
+          <p>AI and automation reshape industries worldwide.</p>
+        </div>
       </div>
 
     </div>
 
   </div>
 
-  <!-- LOWER ARTICLES -->
-  <div class="lower">
+  <!-- LOWER STORIES -->
+  <div class="grid">
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1518186233392-c232efbf2373?auto=format&fit=crop&w=800&q=60">
       <div class="card-content">
         <h4>Public sentiment shifts online</h4>
-        <p>Digital platforms increasingly influence how information spreads globally.</p>
+        <p>Digital platforms influence how narratives spread globally.</p>
       </div>
     </div>
 
@@ -253,7 +278,7 @@
       <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=60">
       <div class="card-content">
         <h4>Financial system modernization</h4>
-        <p>Traditional systems are adapting to digital infrastructure.</p>
+        <p>Traditional systems integrate new digital infrastructure.</p>
       </div>
     </div>
 
@@ -261,7 +286,7 @@
       <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=60">
       <div class="card-content">
         <h4>Global technology trends</h4>
-        <p>Innovation continues to reshape industries worldwide.</p>
+        <p>Innovation continues reshaping global industries.</p>
       </div>
     </div>
 
@@ -269,23 +294,23 @@
       <img src="https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&fit=crop&w=800&q=60">
       <div class="card-content">
         <h4>Economic awareness growth</h4>
-        <p>More users are following global financial developments closely.</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=60">
-      <div class="card-content">
-        <h4>Digital communication changes</h4>
-        <p>Online platforms redefine how information is shared.</p>
+        <p>More users follow global financial developments.</p>
       </div>
     </div>
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=800&q=60">
       <div class="card-content">
+        <h4>Digital communication changes</h4>
+        <p>Online platforms redefine information flow.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=800&q=60">
+      <div class="card-content">
         <h4>Future of digital systems</h4>
-        <p>Ongoing innovation is reshaping global infrastructure.</p>
+        <p>Ongoing innovation reshapes global infrastructure.</p>
       </div>
     </div>
 
@@ -294,7 +319,7 @@
 </div>
 
 <footer>
-  © 2026 Atlas News Network — Independent informational publication
+  © 2026 Atlas Global Media — Independent informational publication
 </footer>
 
 </body>
