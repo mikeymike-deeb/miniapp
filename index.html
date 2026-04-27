@@ -1,207 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>New York Street</title>
-  <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
+  <title>Daily Insight Journal</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #111;
+      font-family: Arial;
+      background: #0f1115;
+      color: white;
     }
 
-    header {
-      background: #ffffff;
-      padding: 16px;
-      text-align: center;
-      border-bottom: 1px solid #eaeaea;
-      position: sticky;
-      top: 0;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 22px;
-    }
-
-    header p {
-      margin: 4px 0 0;
-      font-size: 12px;
-      color: gray;
-    }
-
-    .feed {
-      max-width: 800px;
+    .container {
+      max-width: 700px;
       margin: auto;
-      padding: 10px;
-    }
-
-    .card {
-      background: #fff;
-      border-radius: 12px;
-      margin-bottom: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-      cursor: pointer;
-    }
-
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .content {
-      padding: 12px;
+      padding: 20px;
     }
 
     .title {
-      font-size: 17px;
+      font-size: 26px;
       font-weight: bold;
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
 
-    .desc {
+    .subtitle {
+      color: #aaa;
       font-size: 14px;
-      color: #444;
-      line-height: 1.4;
+      margin-bottom: 20px;
     }
 
-    .meta {
-      font-size: 11px;
-      color: gray;
-      margin-top: 8px;
-    }
-
-    /* ARTICLE VIEW */
-    #articleView {
-      display: none;
-      max-width: 800px;
-      margin: auto;
+    .article {
+      background: #161b22;
       padding: 15px;
-      background: #fff;
-    }
-
-    .back {
-      color: blue;
+      border-radius: 10px;
       margin-bottom: 15px;
-      display: inline-block;
-      cursor: pointer;
     }
 
-    h2 {
-      font-size: 22px;
+    .article h2 {
+      font-size: 18px;
+      margin-bottom: 5px;
     }
 
-    p {
-      line-height: 1.8;
-      font-size: 16px;
+    .article p {
+      font-size: 13px;
+      color: #bbb;
+    }
+
+    .btn {
+      display: block;
+      text-align: center;
+      margin-top: 25px;
+      padding: 14px;
+      background: #ffd700;
+      color: black;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 10px;
+    }
+
+    .footer {
+      font-size: 11px;
+      color: #777;
+      margin-top: 20px;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>New York Street</h1>
-  <p>Live News Feed</p>
-</header>
+<div class="container">
 
-<!-- FEED -->
-<div class="feed" id="feed">
+  <div class="title">Daily Insight Journal</div>
+  <div class="subtitle">Trending topics, discussions, and public viewpoints</div>
 
-  <div class="card" onclick="openArticle(1)">
-    <img src="https://images.unsplash.com/photo-1508385082359-f38ae991e8f2">
-    <div class="content">
-      <div class="title">Global Markets Show Mixed Performance</div>
-      <div class="desc">Investors react to uncertainty across global financial markets as volatility continues.</div>
-      <div class="meta">Finance • Today</div>
-    </div>
+  <div class="article">
+    <h2>Why more people are questioning global systems</h2>
+    <p>Across online communities, discussions around governance, transparency, and institutional trust are increasing.</p>
   </div>
 
-  <div class="card" onclick="openArticle(2)">
-    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b">
-    <div class="content">
-      <div class="title">Technology Stocks Under Pressure</div>
-      <div class="desc">Tech sector reacts to interest rate expectations and shifting investor sentiment.</div>
-      <div class="meta">Technology • Today</div>
-    </div>
+  <div class="article">
+    <h2>The rise of alternative viewpoints</h2>
+    <p>Independent platforms are becoming more popular as people seek perspectives outside traditional media.</p>
   </div>
 
-  <div class="card" onclick="openArticle(3)">
-    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab">
-    <div class="content">
-      <div class="title">Energy Markets Remain Stable</div>
-      <div class="desc">Oil and energy prices remain steady amid balanced global supply conditions.</div>
-      <div class="meta">Energy • Today</div>
-    </div>
+  <div class="article">
+    <h2>Public reactions to recent global events</h2>
+    <p>From economic shifts to political decisions, conversations are evolving rapidly across different regions.</p>
+  </div>
+
+  <a class="btn" href="https://t.me/YOUR_CHANNEL">
+    Continue Reading on Telegram
+  </a>
+
+  <div class="footer">
+    This page shares general informational content and does not represent official news or advice.
   </div>
 
 </div>
-
-<!-- ARTICLE -->
-<div id="articleView">
-  <div class="back" onclick="goBack()">← Back</div>
-  <h2 id="title"></h2>
-  <p id="content"></p>
-</div>
-
-<script>
-  const tg = window.Telegram.WebApp;
-  tg.expand();
-
-  function openArticle(id) {
-    document.getElementById("feed").style.display = "none";
-    document.getElementById("articleView").style.display = "block";
-
-    let title = "";
-    let content = "";
-
-    if (id === 1) {
-      title = "Global Markets Show Mixed Performance";
-
-      content =
-        "Global financial markets showed mixed performance as investors reacted to economic data, inflation trends, and central bank expectations. " +
-        "Trading activity remained elevated as uncertainty continues to influence investor behavior. " +
-        "Technology stocks faced pressure, while energy markets stayed stable. " +
-        "Analysts say volatility is being driven more by uncertainty than by specific events. " +
-        "Future direction depends on upcoming macroeconomic reports.";
-    }
-
-    if (id === 2) {
-      title = "Technology Stocks Under Pressure";
-
-      content =
-        "Technology stocks experienced downward pressure as interest rate expectations influenced valuation models. " +
-        "Higher borrowing costs have reduced risk appetite in growth sectors. " +
-        "Despite short-term weakness, long-term outlook remains focused on AI and cloud computing. " +
-        "Investors are closely watching earnings reports and policy signals. " +
-        "Market sentiment remains cautious but stable.";
-    }
-
-    if (id === 3) {
-      title = "Energy Markets Remain Stable";
-
-      content =
-        "Energy markets remained stable due to balanced global supply and steady demand. " +
-        "Oil prices showed limited volatility as production aligned with consumption. " +
-        "Renewable energy investment continues to grow globally. " +
-        "Geopolitical risks remain present but controlled. " +
-        "Short-term outlook remains stable unless disruptions occur.";
-    }
-
-    document.getElementById("title").innerText = title;
-    document.getElementById("content").innerText = content;
-  }
-
-  function goBack() {
-    document.getElementById("feed").style.display = "block";
-    document.getElementById("articleView").style.display = "none";
-  }
-</script>
 
 </body>
 </html>
