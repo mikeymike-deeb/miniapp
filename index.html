@@ -1,221 +1,271 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Daily Insight Journal</title>
+  <title>Northline News</title>
+
   <style>
     body {
       margin: 0;
-      font-family: Arial;
-      background: #fff;
+      font-family: "Arial", sans-serif;
+      background: #f4f6f8;
       color: #111;
     }
 
-    header {
-      padding: 20px;
-      border-bottom: 1px solid #eee;
-      text-align: center;
+    /* TOP BAR */
+    .topbar {
+      background: #0b0f19;
+      color: white;
+      padding: 14px 20px;
+      font-weight: bold;
+      font-size: 18px;
+      letter-spacing: 0.5px;
     }
 
+    /* NAV */
+    .nav {
+      background: white;
+      border-bottom: 1px solid #e6e6e6;
+      padding: 10px 20px;
+      display: flex;
+      gap: 15px;
+      font-size: 14px;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .nav a:hover {
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* HERO */
+    .hero {
+      max-width: 1100px;
+      margin: 20px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 26px;
+    }
+
+    .hero p {
+      color: #666;
+      margin-top: 8px;
+      font-size: 14px;
+    }
+
+    /* GRID */
     .container {
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
       padding: 20px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 2fr 1fr;
       gap: 15px;
     }
 
-    .card {
-      border: 1px solid #eee;
-      padding: 15px;
-      border-radius: 10px;
+    /* FEATURED */
+    .featured {
+      background: white;
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
       cursor: pointer;
-      transition: 0.2s;
     }
 
-    .card:hover {
-      transform: scale(1.02);
+    .featured h2 {
+      margin-top: 0;
+      font-size: 20px;
     }
 
-    .title {
-      font-weight: bold;
-      margin-bottom: 5px;
+    .featured p {
+      color: #555;
+      font-size: 14px;
     }
 
-    .page {
+    /* SIDEBAR */
+    .side {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .side-card {
+      background: white;
+      padding: 12px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      cursor: pointer;
+    }
+
+    .side-card h3 {
+      font-size: 14px;
+      margin: 0;
+    }
+
+    .side-card p {
+      font-size: 12px;
+      color: #666;
+      margin-top: 5px;
+    }
+
+    /* ARTICLE VIEW */
+    .article {
       display: none;
+      max-width: 800px;
+      margin: 20px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.05);
     }
 
     .back {
-      display: inline-block;
-      margin-bottom: 15px;
+      color: #0066cc;
       cursor: pointer;
-      color: blue;
+      margin-bottom: 15px;
+      display: inline-block;
+      font-size: 14px;
+    }
+
+    .article h2 {
+      margin-top: 0;
+    }
+
+    .meta {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 12px;
+      color: #777;
+    }
+
+    @media (max-width: 900px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h2>Daily Insight Journal</h2>
-</header>
-
-<div class="container">
-
-  <!-- LIST VIEW -->
-  <div id="listView" class="grid">
-
-    <div class="card" onclick="openPost(1)">
-      <div class="title">Global economic discussions grow</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(2)">
-      <div class="title">Digital banking expansion</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(3)">
-      <div class="title">Independent media growth</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(4)">
-      <div class="title">Technology in finance</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(5)">
-      <div class="title">Public opinion shifts online</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(6)">
-      <div class="title">Information access changes</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(7)">
-      <div class="title">Market uncertainty discussions</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(8)">
-      <div class="title">Rise of digital currencies</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(9)">
-      <div class="title">Global policy developments</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(10)">
-      <div class="title">Social media influence on news</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(11)">
-      <div class="title">Changing financial behavior</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(12)">
-      <div class="title">Economic uncertainty topics</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(13)">
-      <div class="title">Global technology trends</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(14)">
-      <div class="title">Media consumption evolution</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(15)">
-      <div class="title">Financial system modernization</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(16)">
-      <div class="title">Public trust in institutions</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(17)">
-      <div class="title">Online discussion ecosystems</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(18)">
-      <div class="title">Global communication changes</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(19)">
-      <div class="title">Economic awareness growth</div>
-      <div>Click to read more...</div>
-    </div>
-
-    <div class="card" onclick="openPost(20)">
-      <div class="title">Future of digital systems</div>
-      <div>Click to read more...</div>
-    </div>
-
-  </div>
-
-  <!-- ARTICLE VIEW -->
-  <div id="postView" class="page">
-    <div class="back" onclick="goBack()">← Back</div>
-    <h2 id="postTitle"></h2>
-    <p id="postContent"></p>
-  </div>
-
+<div class="topbar">
+  Northline News
 </div>
 
+<div class="nav">
+  <a href="#">Home</a>
+  <a href="#">World</a>
+  <a href="#">Economy</a>
+  <a href="#">Technology</a>
+  <a href="#">Opinion</a>
+</div>
+
+<div class="hero">
+  <h1>Independent reporting on global trends & public discussions</h1>
+  <p>Covering economic shifts, digital systems, and worldwide information trends.</p>
+</div>
+
+<!-- HOME -->
+<div id="home" class="container">
+
+  <div class="grid">
+
+    <!-- FEATURED -->
+    <div class="featured" onclick="openArticle(0)">
+      <h2>Global economic discussions intensify</h2>
+      <p>Public conversations around inflation, debt, and long-term stability continue across online platforms and media.</p>
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="side">
+
+      <div class="side-card" onclick="openArticle(1)">
+        <h3>Digital banking expansion</h3>
+        <p>More services shift online globally.</p>
+      </div>
+
+      <div class="side-card" onclick="openArticle(2)">
+        <h3>Media consumption shifts</h3>
+        <p>Short-form content dominates news flow.</p>
+      </div>
+
+      <div class="side-card" onclick="openArticle(3)">
+        <h3>Technology in finance</h3>
+        <p>New systems reshape financial tools.</p>
+      </div>
+
+      <div class="side-card" onclick="openArticle(4)">
+        <h3>Public opinion trends</h3>
+        <p>Online communities influence narratives.</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<div id="article" class="article">
+  <div class="back" onclick="goBack()">← Back to Home</div>
+  <h2 id="title"></h2>
+  <div class="meta">Published • Editorial Desk</div>
+  <p id="content"></p>
+</div>
+
+<footer>
+  © 2026 Northline News — Independent informational publication
+</footer>
+
 <script>
-const posts = {
-  1: ["Global economic discussions grow", "Online discussions about inflation, debt, and financial systems continue to increase globally."],
-  2: ["Digital banking expansion", "More users are shifting toward digital-first banking systems and services."],
-  3: ["Independent media growth", "Alternative platforms are gaining attention across various communities."],
-  4: ["Technology in finance", "New technologies are influencing how financial systems operate worldwide."],
-  5: ["Public opinion shifts online", "Social platforms are increasingly shaping global narratives."],
-  6: ["Information access changes", "People now consume news faster and from more diverse sources."],
-  7: ["Market uncertainty discussions", "Economists and users discuss long-term financial stability trends."],
-  8: ["Rise of digital currencies", "Interest in digital payment systems continues to expand."],
-  9: ["Global policy developments", "Policy changes influence economic conversations worldwide."],
-  10: ["Social media influence on news", "News spreads faster through online communities than traditional media."],
-  11: ["Changing financial behavior", "People adapt to new digital financial tools and platforms."],
-  12: ["Economic uncertainty topics", "Discussions about stability and risk continue across platforms."],
-  13: ["Global technology trends", "Technology adoption is accelerating in multiple industries."],
-  14: ["Media consumption evolution", "Users prefer faster and shorter information formats."],
-  15: ["Financial system modernization", "Traditional systems are integrating digital infrastructure."],
-  16: ["Public trust in institutions", "Trust and transparency remain widely discussed topics."],
-  17: ["Online discussion ecosystems", "Communities shape modern narratives significantly."],
-  18: ["Global communication changes", "Digital platforms redefine communication methods."],
-  19: ["Economic awareness growth", "More people are following global financial news."],
-  20: ["Future of digital systems", "Ongoing innovation continues to reshape global systems."]
-};
 
-function openPost(id) {
-  document.getElementById("listView").style.display = "none";
-  document.getElementById("postView").style.display = "block";
+const articles = [
+  ["Global economic discussions intensify",
+   "Public conversations around inflation, debt levels, and long-term financial stability continue to grow across digital platforms and media outlets."],
 
-  document.getElementById("postTitle").innerText = posts[id][0];
-  document.getElementById("postContent").innerText = posts[id][1];
+  ["Digital banking expansion",
+   "Financial services are increasingly moving toward digital-first platforms, improving accessibility and global reach."],
+
+  ["Media consumption shifts",
+   "Audiences are moving toward shorter, faster, and more visual forms of news consumption across platforms."],
+
+  ["Technology in finance",
+   "Advancements in technology continue to reshape financial systems and payment infrastructure worldwide."],
+
+  ["Public opinion trends",
+   "Online communities are playing a growing role in shaping how information and narratives spread globally."]
+];
+
+function openArticle(i) {
+  document.getElementById("home").style.display = "none";
+  document.getElementById("article").style.display = "block";
+
+  document.getElementById("title").innerText = articles[i][0];
+  document.getElementById("content").innerText = articles[i][1];
 }
 
 function goBack() {
-  document.getElementById("listView").style.display = "grid";
-  document.getElementById("postView").style.display = "none";
+  document.getElementById("home").style.display = "block";
+  document.getElementById("article").style.display = "none";
 }
+
 </script>
 
 </body>
