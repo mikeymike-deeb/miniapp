@@ -6,37 +6,18 @@
     body {
       margin: 0;
       font-family: Arial;
-      background: #ffffff;
+      background: #fff;
       color: #111;
     }
 
     header {
+      padding: 20px;
       border-bottom: 1px solid #eee;
-      padding: 15px 20px;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .logo {
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .menu a {
-      margin-left: 15px;
-      text-decoration: none;
-      color: #555;
-      font-size: 14px;
+      text-align: center;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 900px;
       margin: auto;
       padding: 20px;
     }
@@ -51,33 +32,28 @@
       border: 1px solid #eee;
       padding: 15px;
       border-radius: 10px;
-      background: #fff;
+      cursor: pointer;
+      transition: 0.2s;
     }
 
-    .card h2 {
-      font-size: 15px;
-      margin-bottom: 6px;
+    .card:hover {
+      transform: scale(1.02);
     }
 
-    .card p {
-      font-size: 13px;
-      color: #444;
-      line-height: 1.5;
+    .title {
+      font-weight: bold;
+      margin-bottom: 5px;
     }
 
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: #888;
-      padding: 30px;
-      border-top: 1px solid #eee;
-      margin-top: 40px;
+    .page {
+      display: none;
     }
 
-    @media (max-width: 800px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
+    .back {
+      display: inline-block;
+      margin-bottom: 15px;
+      cursor: pointer;
+      color: blue;
     }
   </style>
 </head>
@@ -85,68 +61,162 @@
 <body>
 
 <header>
-  <div class="nav">
-    <div class="logo">Daily Insight Journal</div>
-    <div class="menu">
-      <a href="#">Home</a>
-      <a href="#">World</a>
-      <a href="#">Economy</a>
-      <a href="#">Opinion</a>
-    </div>
-  </div>
+  <h2>Daily Insight Journal</h2>
 </header>
 
 <div class="container">
 
-  <div class="grid">
+  <!-- LIST VIEW -->
+  <div id="listView" class="grid">
 
-    <div class="card"><h2>Global economic discussions grow</h2><p>Online conversations about inflation and financial stability continue to increase globally.</p></div>
+    <div class="card" onclick="openPost(1)">
+      <div class="title">Global economic discussions grow</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Digital banking expansion</h2><p>More users are shifting toward digital-first banking systems and services.</p></div>
+    <div class="card" onclick="openPost(2)">
+      <div class="title">Digital banking expansion</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Independent media growth</h2><p>Alternative platforms are gaining attention across various communities.</p></div>
+    <div class="card" onclick="openPost(3)">
+      <div class="title">Independent media growth</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Technology in finance</h2><p>New technologies are influencing how financial systems operate worldwide.</p></div>
+    <div class="card" onclick="openPost(4)">
+      <div class="title">Technology in finance</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Public opinion shifts online</h2><p>Social platforms are increasingly shaping global narratives.</p></div>
+    <div class="card" onclick="openPost(5)">
+      <div class="title">Public opinion shifts online</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Information access changes</h2><p>People now consume news faster and from more diverse sources.</p></div>
+    <div class="card" onclick="openPost(6)">
+      <div class="title">Information access changes</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Market uncertainty discussions</h2><p>Economists and users discuss long-term financial stability trends.</p></div>
+    <div class="card" onclick="openPost(7)">
+      <div class="title">Market uncertainty discussions</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Rise of digital currencies</h2><p>Interest in digital payment systems continues to expand.</p></div>
+    <div class="card" onclick="openPost(8)">
+      <div class="title">Rise of digital currencies</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Global policy developments</h2><p>Policy changes in multiple regions influence economic conversations.</p></div>
+    <div class="card" onclick="openPost(9)">
+      <div class="title">Global policy developments</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Social media influence on news</h2><p>News spreads faster through online communities than traditional media.</p></div>
+    <div class="card" onclick="openPost(10)">
+      <div class="title">Social media influence on news</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Changing financial behavior</h2><p>People are adapting to new digital financial tools and platforms.</p></div>
+    <div class="card" onclick="openPost(11)">
+      <div class="title">Changing financial behavior</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Economic uncertainty topics</h2><p>Discussions about stability and risk continue across platforms.</p></div>
+    <div class="card" onclick="openPost(12)">
+      <div class="title">Economic uncertainty topics</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Global technology trends</h2><p>Technology adoption is accelerating in multiple industries.</p></div>
+    <div class="card" onclick="openPost(13)">
+      <div class="title">Global technology trends</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Media consumption evolution</h2><p>Users are shifting toward shorter and faster information formats.</p></div>
+    <div class="card" onclick="openPost(14)">
+      <div class="title">Media consumption evolution</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Financial system modernization</h2><p>Traditional systems are slowly integrating digital infrastructure.</p></div>
+    <div class="card" onclick="openPost(15)">
+      <div class="title">Financial system modernization</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Public trust in institutions</h2><p>Trust and transparency remain widely discussed topics.</p></div>
+    <div class="card" onclick="openPost(16)">
+      <div class="title">Public trust in institutions</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Online discussion ecosystems</h2><p>Communities play a major role in shaping narratives today.</p></div>
+    <div class="card" onclick="openPost(17)">
+      <div class="title">Online discussion ecosystems</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Global communication changes</h2><p>Digital platforms continue to redefine communication methods.</p></div>
+    <div class="card" onclick="openPost(18)">
+      <div class="title">Global communication changes</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Economic awareness growth</h2><p>More people are following global financial news closely.</p></div>
+    <div class="card" onclick="openPost(19)">
+      <div class="title">Economic awareness growth</div>
+      <div>Click to read more...</div>
+    </div>
 
-    <div class="card"><h2>Future of digital systems</h2><p>Ongoing innovation continues to reshape global systems.</p></div>
+    <div class="card" onclick="openPost(20)">
+      <div class="title">Future of digital systems</div>
+      <div>Click to read more...</div>
+    </div>
 
+  </div>
+
+  <!-- ARTICLE VIEW -->
+  <div id="postView" class="page">
+    <div class="back" onclick="goBack()">← Back</div>
+    <h2 id="postTitle"></h2>
+    <p id="postContent"></p>
   </div>
 
 </div>
 
-<footer>
-  © 2026 Daily Insight Journal — Independent informational publication
-</footer>
+<script>
+const posts = {
+  1: ["Global economic discussions grow", "Online discussions about inflation, debt, and financial systems continue to increase globally."],
+  2: ["Digital banking expansion", "More users are shifting toward digital-first banking systems and services."],
+  3: ["Independent media growth", "Alternative platforms are gaining attention across various communities."],
+  4: ["Technology in finance", "New technologies are influencing how financial systems operate worldwide."],
+  5: ["Public opinion shifts online", "Social platforms are increasingly shaping global narratives."],
+  6: ["Information access changes", "People now consume news faster and from more diverse sources."],
+  7: ["Market uncertainty discussions", "Economists and users discuss long-term financial stability trends."],
+  8: ["Rise of digital currencies", "Interest in digital payment systems continues to expand."],
+  9: ["Global policy developments", "Policy changes influence economic conversations worldwide."],
+  10: ["Social media influence on news", "News spreads faster through online communities than traditional media."],
+  11: ["Changing financial behavior", "People adapt to new digital financial tools and platforms."],
+  12: ["Economic uncertainty topics", "Discussions about stability and risk continue across platforms."],
+  13: ["Global technology trends", "Technology adoption is accelerating in multiple industries."],
+  14: ["Media consumption evolution", "Users prefer faster and shorter information formats."],
+  15: ["Financial system modernization", "Traditional systems are integrating digital infrastructure."],
+  16: ["Public trust in institutions", "Trust and transparency remain widely discussed topics."],
+  17: ["Online discussion ecosystems", "Communities shape modern narratives significantly."],
+  18: ["Global communication changes", "Digital platforms redefine communication methods."],
+  19: ["Economic awareness growth", "More people are following global financial news."],
+  20: ["Future of digital systems", "Ongoing innovation continues to reshape global systems."]
+};
+
+function openPost(id) {
+  document.getElementById("listView").style.display = "none";
+  document.getElementById("postView").style.display = "block";
+
+  document.getElementById("postTitle").innerText = posts[id][0];
+  document.getElementById("postContent").innerText = posts[id][1];
+}
+
+function goBack() {
+  document.getElementById("listView").style.display = "grid";
+  document.getElementById("postView").style.display = "none";
+}
+</script>
 
 </body>
 </html>
