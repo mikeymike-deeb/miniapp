@@ -7,30 +7,18 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f2f4f7;
+      background: #f3f5f7;
       color: #111;
     }
 
-    /* TOP BRAND BAR */
     .topbar {
       background: #0b0f19;
       color: white;
-      padding: 14px 20px;
+      padding: 15px 20px;
       font-size: 20px;
       font-weight: bold;
-      letter-spacing: 1px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
     }
 
-    .topbar span {
-      font-size: 12px;
-      font-weight: normal;
-      color: #aaa;
-    }
-
-    /* BREAKING TICKER */
     .ticker {
       background: #d60000;
       color: white;
@@ -39,287 +27,183 @@
       font-weight: bold;
     }
 
-    /* NAV */
     .nav {
       background: white;
-      padding: 12px 20px;
-      display: flex;
-      gap: 18px;
-      font-size: 14px;
-      border-bottom: 1px solid #e6e6e6;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
     }
 
     .nav a {
-      color: #333;
+      margin-right: 15px;
       text-decoration: none;
+      color: #333;
+      font-size: 14px;
     }
 
-    .nav a:hover {
-      color: #000;
-      font-weight: bold;
-    }
-
-    /* CONTAINER */
     .container {
-      max-width: 1200px;
+      max-width: 900px;
       margin: auto;
       padding: 20px;
     }
 
-    /* HERO GRID */
-    .hero {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 20px;
-    }
-
-    /* MAIN FEATURE */
-    .feature {
+    .article {
       background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.06);
-    }
-
-    .feature img {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-    }
-
-    .feature-content {
+      margin-bottom: 20px;
       padding: 20px;
-    }
-
-    .feature h1 {
-      margin: 0;
-      font-size: 26px;
-    }
-
-    .feature p {
-      color: #555;
-      font-size: 14px;
-      line-height: 1.6;
-    }
-
-    /* SIDEBAR */
-    .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .side-card {
-      background: white;
       border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      box-shadow: 0 3px 10px rgba(0,0,0,0.06);
     }
 
-    .side-card img {
+    .article img {
       width: 100%;
-      height: 120px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      height: 250px;
       object-fit: cover;
     }
 
-    .side-card div {
-      padding: 10px;
+    .article h1 {
+      margin: 0 0 10px;
+      font-size: 22px;
     }
 
-    .side-card h3 {
-      margin: 0;
-      font-size: 14px;
-    }
-
-    .side-card p {
+    .meta {
       font-size: 12px;
-      color: #666;
+      color: #888;
+      margin-bottom: 10px;
     }
 
-    /* GRID SECTION */
-    .grid {
-      margin-top: 25px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 15px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    .card img {
-      width: 100%;
-      height: 140px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 12px;
-    }
-
-    .card h4 {
-      margin: 0;
+    .article p {
       font-size: 14px;
+      line-height: 1.7;
+      color: #333;
     }
 
-    .card p {
-      font-size: 12px;
-      color: #666;
-      margin-top: 6px;
-      line-height: 1.4;
-    }
-
-    /* FOOTER */
     footer {
       text-align: center;
-      padding: 35px;
+      padding: 30px;
       font-size: 12px;
       color: #777;
-      margin-top: 40px;
-    }
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .grid {
-        grid-template-columns: 1fr;
-      }
     }
   </style>
 </head>
 
 <body>
 
-<div class="topbar">
-  Atlas Global Media
-  <span>Independent Digital News Network</span>
-</div>
+<div class="topbar">Atlas Global Media</div>
 
 <div class="ticker">
-  🔴 BREAKING: Global economic, technology, and digital transformation discussions continue across major online platforms
+🔴 BREAKING: Rising global interest in economic trends, digital systems, and financial stability continues in 2026
 </div>
 
 <div class="nav">
   <a href="#">Home</a>
   <a href="#">World</a>
-  <a href="#">Business</a>
+  <a href="#">Economy</a>
   <a href="#">Technology</a>
-  <a href="#">Opinion</a>
 </div>
 
 <div class="container">
 
-  <!-- HERO -->
-  <div class="hero">
+  <!-- ARTICLE 1 -->
+  <div class="article">
+    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?auto=format&fit=crop&w=1200&q=60">
 
-    <!-- MAIN STORY -->
-    <div class="feature">
-      <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=1400&q=60">
+    <h1>Why inflation concerns are rising in 2026</h1>
+    <div class="meta">By Editorial Team • April 2026</div>
 
-      <div class="feature-content">
-        <h1>Global economic discussions reach new levels across digital platforms</h1>
-        <p>
-          Public attention toward inflation, financial systems, and long-term stability continues to grow globally.
-          Analysts note that online platforms now play a major role in shaping how economic narratives spread and evolve.
-          The increased accessibility of information has led to wider public engagement with complex financial topics.
-        </p>
-      </div>
-    </div>
+    <p>
+      Inflation has become one of the most widely discussed economic topics in recent months, as rising costs across housing, energy, and consumer goods affect daily life in many regions.
+    </p>
 
-    <!-- SIDEBAR -->
-    <div class="sidebar">
+    <p>
+      Analysts point to a combination of global supply changes, policy decisions, and shifting market expectations as key drivers behind the trend. While perspectives differ, there is growing consensus that economic conditions are entering a new phase.
+    </p>
 
-      <div class="side-card">
-        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=60">
-        <div>
-          <h3>Digital banking expansion</h3>
-          <p>Mobile-first financial systems continue global adoption.</p>
-        </div>
-      </div>
-
-      <div class="side-card">
-        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=60">
-        <div>
-          <h3>Media consumption shift</h3>
-          <p>Short-form content dominates global news flow.</p>
-        </div>
-      </div>
-
-      <div class="side-card">
-        <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=60">
-        <div>
-          <h3>Technology acceleration</h3>
-          <p>AI and automation reshape industries worldwide.</p>
-        </div>
-      </div>
-
-    </div>
-
+    <p>
+      Increased access to information through digital platforms has also contributed to a wider public understanding of financial systems, bringing complex topics into everyday conversation.
+    </p>
   </div>
 
-  <!-- LOWER STORIES -->
-  <div class="grid">
+  <!-- ARTICLE 2 -->
+  <div class="article">
+    <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=1200&q=60">
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1518186233392-c232efbf2373?auto=format&fit=crop&w=800&q=60">
-      <div class="card-content">
-        <h4>Public sentiment shifts online</h4>
-        <p>Digital platforms influence how narratives spread globally.</p>
-      </div>
-    </div>
+    <h1>Digital banking continues to expand globally</h1>
+    <div class="meta">By Financial Desk • April 2026</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=60">
-      <div class="card-content">
-        <h4>Financial system modernization</h4>
-        <p>Traditional systems integrate new digital infrastructure.</p>
-      </div>
-    </div>
+    <p>
+      Financial institutions are rapidly expanding digital services, allowing users to access banking tools directly from mobile devices without relying on physical branches.
+    </p>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=60">
-      <div class="card-content">
-        <h4>Global technology trends</h4>
-        <p>Innovation continues reshaping global industries.</p>
-      </div>
-    </div>
+    <p>
+      This shift has been driven by increased demand for convenience, speed, and global accessibility. Mobile payments, online transfers, and automated systems are now standard features across many platforms.
+    </p>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?auto=format&fit=crop&w=800&q=60">
-      <div class="card-content">
-        <h4>Economic awareness growth</h4>
-        <p>More users follow global financial developments.</p>
-      </div>
-    </div>
+    <p>
+      Experts suggest that digital infrastructure will continue to define the future of financial services, especially in regions experiencing rapid technological growth.
+    </p>
+  </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?auto=format&fit=crop&w=800&q=60">
-      <div class="card-content">
-        <h4>Digital communication changes</h4>
-        <p>Online platforms redefine information flow.</p>
-      </div>
-    </div>
+  <!-- ARTICLE 3 -->
+  <div class="article">
+    <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=60">
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=800&q=60">
-      <div class="card-content">
-        <h4>Future of digital systems</h4>
-        <p>Ongoing innovation reshapes global infrastructure.</p>
-      </div>
-    </div>
+    <h1>How media consumption is changing worldwide</h1>
+    <div class="meta">By Media Desk • April 2026</div>
 
+    <p>
+      The way audiences consume news has changed significantly, with short-form content and real-time updates becoming dominant across digital platforms.
+    </p>
+
+    <p>
+      Social media and algorithm-driven feeds now influence what information users see, often prioritizing speed and accessibility over depth.
+    </p>
+
+    <p>
+      While traditional journalism remains important, media organizations continue adapting their formats to meet evolving audience expectations.
+    </p>
+  </div>
+
+  <!-- ARTICLE 4 -->
+  <div class="article">
+    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=60">
+
+    <h1>Technology continues reshaping global industries</h1>
+    <div class="meta">By Technology Desk • April 2026</div>
+
+    <p>
+      Rapid advancements in technology are transforming industries ranging from finance to communication, with automation and digital systems becoming increasingly common.
+    </p>
+
+    <p>
+      Businesses are integrating new tools to improve efficiency and reduce reliance on manual processes, leading to significant structural changes in how organizations operate.
+    </p>
+
+    <p>
+      As innovation continues, experts expect further expansion of digital infrastructure across global markets.
+    </p>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="article">
+    <h1>About Atlas Global Media</h1>
+    <p>
+      Atlas Global Media is an independent digital publication focused on covering global trends, economic developments, and technology insights.
+      Our mission is to provide clear, neutral, and accessible information for a broad audience.
+    </p>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="article">
+    <h1>Contact</h1>
+    <p>Email: contact@atlasmedia.com</p>
   </div>
 
 </div>
 
 <footer>
-  © 2026 Atlas Global Media — Independent informational publication
+© 2026 Atlas Global Media — Independent informational publication
 </footer>
 
 </body>
