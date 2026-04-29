@@ -4,36 +4,83 @@
 <title>Atlas Global Media</title>
 
 <style>
-body {font-family: Arial; background:#f3f5f7; margin:0;}
+body {margin:0;font-family:Arial;background:#f3f5f7;}
 .topbar {background:#0b0f19;color:white;padding:15px;font-size:20px;font-weight:bold;}
-.container {max-width:900px;margin:auto;padding:20px;}
-.article {background:white;padding:20px;margin-bottom:20px;border-radius:10px;}
-.article a {text-decoration:none;color:black;}
-.meta {font-size:12px;color:#888;}
+.ticker {background:#d60000;color:white;padding:10px;font-size:13px;}
+.container {max-width:1100px;margin:auto;padding:20px;}
+.grid {display:grid;grid-template-columns:2fr 1fr;gap:20px;}
+.card {background:white;border-radius:10px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,0.05);}
+.card img {width:100%;height:250px;object-fit:cover;}
+.card-content {padding:15px;}
+.card a {text-decoration:none;color:black;}
+.small-grid {margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:15px;}
+.small-card img {height:140px;}
 </style>
 </head>
 
 <body>
 
 <div class="topbar">Atlas Global Media</div>
+<div class="ticker">🔴 BREAKING: Global economic and digital system discussions intensify worldwide</div>
 
 <div class="container">
 
-<div class="article">
-  <h2><a href="article1.html">Why inflation concerns are rising in 2026</a></h2>
-  <div class="meta">Editorial Team • April 2026</div>
-  <p>Rising costs and global economic shifts are increasing public attention on inflation trends...</p>
+<div class="grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1495020689067-958852a7765e">
+<div class="card-content">
+<h2><a href="article1.html">Why inflation concerns are rising in 2026</a></h2>
+<p>Rising costs and global economic changes are drawing increased attention worldwide...</p>
+</div>
 </div>
 
-<div class="article">
-  <h2><a href="article2.html">Digital banking continues to expand globally</a></h2>
-  <div class="meta">Financial Desk • April 2026</div>
-  <p>Financial services are shifting rapidly toward mobile-first platforms...</p>
+<div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c">
+<div class="card-content">
+<h3><a href="article2.html">Digital banking expansion</a></h3>
+</div>
 </div>
 
-<div class="article">
-  <h2><a href="about.html">About Atlas Global Media</a></h2>
-  <p>Learn more about our publication and mission.</p>
+<div class="card" style="margin-top:15px;">
+<img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c">
+<div class="card-content">
+<h3><a href="article3.html">Media consumption changes</a></h3>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="small-grid">
+
+<div class="card small-card">
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f">
+<div class="card-content">
+<h4><a href="article4.html">Financial system modernization</a></h4>
+</div>
+</div>
+
+<div class="card small-card">
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475">
+<div class="card-content">
+<h4><a href="article3.html">Technology reshaping industries</a></h4>
+</div>
+</div>
+
+<div class="card small-card">
+<img src="https://images.unsplash.com/photo-1508385082359-f38ae991e8f2">
+<div class="card-content">
+<h4><a href="article2.html">Global awareness rising</a></h4>
+</div>
+</div>
+
+</div>
+
+<div class="card" style="margin-top:20px;padding:20px;">
+<h3><a href="about.html">About Atlas Global Media</a></h3>
+<p>Independent digital publication covering global trends.</p>
 </div>
 
 </div>
